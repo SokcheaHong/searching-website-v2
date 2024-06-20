@@ -21,7 +21,7 @@ export default defineNuxtConfig({
       webBaseUrl: process.env.WEB_URL,
     },
   },
-  modules: ['@pinia/nuxt', '@nuxtjs/tailwindcss'],
+  modules: ['@pinia/nuxt', '@nuxtjs/tailwindcss', '@nuxt/image'],
   pinia: {
     storesDirs: ['./stores/**'],
   },

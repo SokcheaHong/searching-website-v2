@@ -36,7 +36,8 @@
     scroll-behavior: smooth;
   }
 
-  body {
+  body,
+  html {
     font-family:
       'Battambang',
       -apple-system,
@@ -49,6 +50,8 @@
       'Open Sans',
       'Helvetica Neue',
       sans-serif;
+    background-color: #fafafa !important;
+    height: 100vh;
   }
 }
 
@@ -58,4 +61,16 @@
 
 .header_site_title {
   @apply font-[Moulpali];
+}
+
+.search_suggestion_item {
+  @apply px-4 py-2 text-slate-900  hover:bg-[#86c6e0] transition-colors ease-linear delay-100 cursor-pointer font-bold;
+}
+
+.search_select_deselect_btn {
+  @apply text-blue-700 border-b-2 border-transparent  hover:border-blue-700 transition-colors ease-linear delay-75 disabled:text-slate-400 disabled:border-transparent;
+}
+
+.about_info_and_legal_standard_letter_box {
+  @apply flex flex-col bg-[#e8e9e9] p-5 rounded-sm;
 }
