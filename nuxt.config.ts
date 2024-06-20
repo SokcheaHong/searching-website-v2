@@ -15,11 +15,14 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  plugins: ['~/plugins/pinia'],
   runtimeConfig: {
     public: {
-      apiBaseUrl: process.env.API_BASE_URL,
-      webBaseUrl: process.env.WEB_BASE_URL,
+      apiBaseUrl: process.env.API_URL,
+      webBaseUrl: process.env.WEB_URL,
     },
+  },
+  modules: ['@pinia/nuxt', '@nuxtjs/tailwindcss'],
+  pinia: {
+    storesDirs: ['./stores/**'],
   },
 });

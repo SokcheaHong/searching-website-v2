@@ -1,3 +1,3 @@
-import categoryStore from './category';
+import useCategoryStore from './category';
 
-export { categoryStore };
+export { useCategoryStore };

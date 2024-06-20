@@ -24,6 +24,7 @@
     font-family: 'KhmerOsSiemreap';
     src: url('./../fonts/KhmerOsSiemreap.ttf');
   }
+
   *,
   ::after,
   ::before,
@@ -56,5 +57,5 @@
 }
 
 .header_site_title {
-  @apply font-[Moulpali]
+  @apply font-[Moulpali];
 }
