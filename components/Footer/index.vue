@@ -1,5 +1,7 @@
 <template>
-  <footer class="footer bg-[#86c6e0] z-[99999] overflow-hidden text-white">
+  <footer
+    class="flex flex-col bg-[#86c6e0] z-[99999] overflow-hidden text-white"
+  >
     <div
       class="w-full bg-[#1d2846] py-10 px-2 flex flex-wrap items-center justify-center gap-6"
     >
@@ -21,19 +23,19 @@
         </div>
       </div>
       <div class="lg:w-2/5 w-[100%] grid grid-cols-2 gap-4 items-center">
-        <a
-          href="https://maps.app.goo.gl/ep8cPkufQYYvhsvZ6"
+        <NuxtLink
+          to="https://maps.app.goo.gl/ep8cPkufQYYvhsvZ6"
           class="footer_place_and_phone_box"
         >
-          ទីតាំង</a
+          ទីតាំង</NuxtLink
         >
         <div class="footer_place_and_phone_box">លេខទំនាក់ទំនង</div>
       </div>
     </div>
     <div
-      class="text-sm lg:text-lg text-center py-8 px-4 bg-[#eaddc3] text-blue-900"
+      class="block w-full text-sm lg:text-lg text-center py-8 px-4 bg-[#eaddc3] text-blue-900"
     >
-      © រក្សាសិទ្ធិគ្រប់យ៉ាងដោយ ក្រសួងរៀបចំដែនដី នគរូបនីយកម្ម និងសំណង់
+      <p>© រក្សាសិទ្ធិគ្រប់យ៉ាងដោយ ក្រសួងរៀបចំដែនដី នគរូបនីយកម្ម និងសំណង់</p>
     </div>
   </footer>
 </template>

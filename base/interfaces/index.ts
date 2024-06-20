@@ -5,3 +5,10 @@ export interface BaseStoreState {
   error?: boolean;
   message?: string;
 }
+
+export interface Pagination {
+  page?: number;
+  limit?: number;
+  offset?: number;
+  search?: string;
+}

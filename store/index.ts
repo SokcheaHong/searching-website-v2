@@ -1,3 +1,5 @@
 import useCategoryStore from './category';
+import useAboutStore from './about';
+import usePostStore from './post';
 
-export { useCategoryStore };
+export { useCategoryStore, useAboutStore, usePostStore };
