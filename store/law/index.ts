@@ -17,7 +17,7 @@ export default defineStore('law', {
     async getMany(query?: Pagination) {
       this.loading = true;
       try {
-        const queryString = buildQuery(query ?? {});
+        const queryString = buildQuery(query || {});
         const { data, status, error } = await useAPI(
           `/api/api/legal-letter?${queryString}`
         );

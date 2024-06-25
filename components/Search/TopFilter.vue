@@ -2,7 +2,7 @@
 const router = useRouter();
 const { path } = useRoute();
 const { params, append } = useSearch();
-const type = ref<'all' | 'name'>(params.value.type ?? 'all');
+const type = ref<'all' | 'name'>(params.value.type || 'all');
 
 const onChange = (event: Event) => {
   const { value } = event.target as HTMLInputElement;

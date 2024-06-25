@@ -12,7 +12,7 @@ const props = defineProps<PropsType>();
     <svg
       aria-hidden="true"
       class="w-8 h-8 text-zinc-300 animate-spin"
-      :style="{ fill: props.color ?? '#86c6e0' }"
+      :style="{ fill: props.color || '#86c6e0' }"
       viewBox="0 0 100 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -26,6 +26,6 @@ const props = defineProps<PropsType>();
         fill="currentFill"
       />
     </svg>
-    <span class="text-gray-900">{{ props.text ?? 'កំពុងទាញយកទិន្ន័យ' }}</span>
+    <span class="text-gray-900">{{ props.text || 'កំពុងទាញយកទិន្ន័យ' }}</span>
   </div>
 </template>
