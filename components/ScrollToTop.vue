@@ -26,9 +26,9 @@ onBeforeUnmount(() => {
   <transition name="fade">
     <button
       id="pagetop"
-      class="btn btn-info fixed right-5 bottom-5 rounded-full p-2 animate-pulse delay-75"
-      @click="scrollToTop"
+      class="btn btn-info fixed right-5 bottom-5 rounded-full p-2 animate-pulse duration-100 z-50"
       v-show="show"
+      @click="scrollToTop"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

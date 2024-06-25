@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="flex flex-col bg-[#86c6e0] z-[99999] overflow-hidden text-white"
+    class="flex flex-col bg-[#86c6e0] z-[99999] overflow-hidden mt-9 text-white"
   >
     <div
       class="w-full bg-[#1d2846] py-10 px-2 flex flex-wrap items-center justify-center gap-6"
@@ -8,13 +8,15 @@
       <div
         class="w-5/5 lg:w-2/5 flex flex-col lg:flex-row items-center justify-center gap-4"
       >
-        <img
+        <NuxtImg
           alt="MLMUPC"
-          src="/assets/images/mlmupc-logo.png"
-          class="w-[140px]"
+          src="mlmupc-512.png"
+          loading="lazy"
+          format="webp"
+          class="block object-contain w-[120px] h-[120px] sm:w-[140px] sm:h-[140px]"
         />
-        <div>
-          <p class="text-xl text-white font-bold text-center lg:text-start">
+        <div class="text-center lg:text-start">
+          <p class="text-xl text-white font-bold">
             ក្រសួងរៀបចំដែនដី នគរូបនីយកម្ម និងសំណង់
           </p>
           <p class="text-xs mt-2 text-white">

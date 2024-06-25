@@ -1,13 +1,18 @@
 <script setup lang="ts">
 const config = useRuntimeConfig();
 
-useSeoMeta({
-  charset: 'utf-8',
-  viewport: { width: 'device-width', initialScale: '1.0' },
+useHead({
+  link: [{ rel: 'icon', href: 'mlmupc-logo.ico' }],
+});
+
+useServerSeoMeta({
+  contentType: 'text/html; charset=utf-8',
   title: 'ក្រសូងរៀបចំដែនដី នគរូបនីយកម្ម និងសំណង់ | MLMUPC',
   ogTitle: 'ក្រសួងរៀបចំដែនដី នគរូបនីយកម្ម និងសំណង់ | MLMUPC',
-  description: 'Ministry of Land Management, Urban Planning and Construction',
-  ogDescription: 'Ministry of Land Management, Urban Planning and Construction',
+  description:
+    'គេហទំព័រនេះ ត្រូវបានបង្កើតឡើងដើម្បីចងក្រងទិន្នន័យលិខិតបទដ្ឋានគតិយុត្តក្នុងក្របខណ្ឌវិស័យរៀបចំដែនដី នគរូបនីយកម្ម និងសំណង់។',
+  ogDescription:
+    'គេហទំព័រនេះ ត្រូវបានបង្កើតឡើងដើម្បីចងក្រងទិន្នន័យលិខិតបទដ្ឋានគតិយុត្តក្នុងក្របខណ្ឌវិស័យរៀបចំដែនដី នគរូបនីយកម្ម និងសំណង់។',
   ogType: 'website',
   ogUrl: config.public.webBaseUrl,
   ogImage: config.public.webBaseUrl + '/mlmupc-logo.ico',
@@ -17,6 +22,7 @@ useSeoMeta({
 </script>
 
 <template>
+  <NuxtLoadingIndicator />
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>

@@ -18,6 +18,26 @@ export const debounce = (cb: DebounceFnc, delay: number = 350): DebounceFnc => {
   };
 };
 
+export const delay = (ms = 500) =>
+  new Promise((resolve) => setTimeout(resolve, ms));
+
+export const uniqueArray = (arr: Record<string, unknown>[], key: any) => {
+  const map = new Map();
+  arr.forEach((item) => map.set(item[key], item));
+  return Array.from(map.values());
+};
+
+export const filterObjectWithTruthyValues = <T extends object>(
+  obj: T
+): Partial<T> => {
+  return Object.keys(obj).reduce((acc, key) => {
+    if (obj[key as keyof T]) {
+      acc[key as keyof T] = obj[key as keyof T];
+    }
+    return acc;
+  }, {} as Partial<T>);
+};
+
 export const arabicToKhmer = (number: number | string): string => {
   const khmerNumerals = ['០', '១', '២', '៣', '៤', '៥', '៦', '៧', '៨', '៩'];
 

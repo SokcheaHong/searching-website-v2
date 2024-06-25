@@ -1,20 +1,33 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const route = useRoute();
+
+watch(
+  () => route.fullPath,
+  () => {
+    useSeoMeta({
+      title: 'ទំព័រដើម | ក្រសូងរៀបចំដែនដី នគរូបនីយកម្ម និងសំណង់​ | MLMUPC',
+    });
+  },
+  { immediate: true }
+);
+</script>
 
 <template>
   <!-- Search  -->
-  <section class="grid grid-cols-1 gap-2 mx-auto w-100 md:w-[80vw]">
+  <section class="search_section_layout">
     <Search />
   </section>
 
   <!-- Post -->
   <section class="mt-9">
     <PostHeader :type="'featured'" />
+    <div class="border-b my-2" />
     <PostList />
   </section>
 
   <!-- About Information & Standard Legal Letters -->
-  <section class="mt-2 mb-9">
-    <div class="text-slate-900 py-5 text-lgm">
+  <section class="mt-2">
+    <div class="text-slate-900 py-5 text-lg">
       ព័ត៌មានអំពីលិខិតបទដ្ឋានគតិយុត្ត
     </div>
     <div class="grid gap-4 grid-cols-1 md:grid-cols-2">
@@ -22,15 +35,15 @@
         <ul class="flex flex-col gap-2">
           <li>
             <NuxtLink
-              to="laws-register"
-              class="text-blue-600 cursor-pointer hover:underline"
+              to="/update-laws"
+              class="link text-blue-700 cursor-pointer hover:text-blue-800 link_transition"
               >លិខិតបទដ្ឋានគតិយុត្តដែលទើបបានធ្វើបច្ចុប្បន្នភាព</NuxtLink
             >
           </li>
           <li>
             <NuxtLink
-              to="laws-register"
-              class="text-blue-600 cursor-pointer hover:underline"
+              to="/laws-register"
+              class="link text-blue-700 cursor-pointer hover:text-blue-800 link_transition"
               >តារាងបញ្ជីលិខិតបទដ្ឋានគតិយុត្តសរុបក្នុងគេហទំព័រ</NuxtLink
             >
           </li>
@@ -41,4 +54,5 @@
       </div>
     </div>
   </section>
+  <ScrollToTop />
 </template>

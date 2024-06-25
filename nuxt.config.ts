@@ -6,6 +6,9 @@ export default defineNuxtConfig({
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1.0',
       link: [{ rel: 'icon', href: 'mlmupc-logo.ico' }],
+      htmlAttrs: {
+        lang: 'en',
+      },
     },
   },
   css: ['~/assets/css/main.css'],
@@ -21,8 +24,21 @@ export default defineNuxtConfig({
       webBaseUrl: process.env.WEB_URL,
     },
   },
-  modules: ['@pinia/nuxt', '@nuxtjs/tailwindcss', '@nuxt/image'],
+  plugins: ['~/plugins/api.ts'],
+  modules: [
+    '@pinia/nuxt',
+    '@nuxtjs/tailwindcss',
+    '@nuxt/image',
+    '@nuxtjs/robots',
+    '@nuxt/content',
+    '@nuxtjs/sitemap',
+  ],
   pinia: {
     storesDirs: ['./stores/**'],
+  },
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth',
+    },
   },
 });
