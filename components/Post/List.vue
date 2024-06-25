@@ -3,7 +3,7 @@ import { usePostStore } from '~/store';
 const store = usePostStore();
 
 useLazyAsyncData('news', () =>
-  store.getMany({ isFeatured: Number(!history?.state?.isFeature ?? 1) })
+  store.getMany({ isFeatured: Number(!history?.state?.isFeature || 1) })
 );
 </script>
 

@@ -16,11 +16,11 @@ export default defineStore('category', {
     async getMany(query?: Pagination) {
       this.loading = true;
       try {
-        const queryString = buildQuery(query ?? {});
+        const queryString = buildQuery(query || {});
         const { data, status, error } = await useAPI(
           `/api/categories?${queryString}`
         );
-        await delay()
+        await delay();
         if (status.value === 'error') {
           throw error.value;
         }

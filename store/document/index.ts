@@ -18,7 +18,7 @@ export default defineStore('document', {
     async getMany(query?: GetListDocument) {
       this.loading = true;
       try {
-        const queryString = buildQuery(query ?? {});
+        const queryString = buildQuery(query || {});
         const { data, status, error } = await useAPI(
           `/api/documents?${queryString}`
         );

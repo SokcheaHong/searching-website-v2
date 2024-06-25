@@ -1,10 +1,6 @@
 <script setup lang="ts">
 const config = useRuntimeConfig();
 
-useHead({
-  link: [{ rel: 'icon', href: 'mlmupc-logo.ico' }],
-});
-
 useServerSeoMeta({
   contentType: 'text/html; charset=utf-8',
   title: 'ក្រសូងរៀបចំដែនដី នគរូបនីយកម្ម និងសំណង់ | MLMUPC',
