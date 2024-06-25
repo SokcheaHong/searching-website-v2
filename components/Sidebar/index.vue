@@ -11,7 +11,7 @@ const props = defineProps<{
       v-show="props.open"
       class="bg-white fixed inset-0 z-50 overflow-auto shadow-lg"
     >
-      <div  class="grid gap-2 p-2">
+      <div class="grid gap-2 p-2">
         <button
           role="button"
           class="btn btn-ghost btn-circle p-2 absolute top-3 right-3"
@@ -60,16 +60,14 @@ const props = defineProps<{
 <style scoped>
 .slide-enter-active,
 .slide-leave-active {
-  transition: transform 0.5s;
+  transition: transform 0.35s;
 }
 .slide-enter,
 .slide-leave-to {
   transform: translateX(100%);
-  transition: transform 0.5s;
 }
 .slide-enter-to,
 .slide-leave {
   transform: translateX(0);
-  transition: transform 0.5s;
 }
 </style>

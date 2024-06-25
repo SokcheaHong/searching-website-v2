@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { useDocumentStore } from '~/store';
 import { filterObjectWithTruthyValues } from '~/utils';
 
+const store = useDocumentStore();
 const router = useRouter();
 const search = useSearch();
 
@@ -13,14 +15,16 @@ const handleSearchFocus = () => {
 const onChange = debounce((event: InputEvent) => {
   const { value } = event.target as HTMLInputElement;
   search.append('search', value);
-}, 500);
+});
 
 const onSubmit = () => {
+  store.getMany(search.params.value);
   router.push({
     path: '/result',
     query: filterObjectWithTruthyValues(search.params.value),
     force: true,
   });
+  show.value = false;
 };
 </script>
 

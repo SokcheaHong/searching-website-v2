@@ -14,7 +14,7 @@ const selectedItems = ref<any[]>([]);
 const isSelectAll = computed(() => items.value.every((item) => item.checked));
 const isDeselectAll = computed(() => !items.value.some((item) => item.checked));
 
-const handleSelectAll = debounce((selected: boolean) => {
+const handleSelectAll = (selected: boolean) => {
   items.value.forEach((item) => {
     item.checked = selected;
   });
@@ -32,9 +32,9 @@ const handleSelectAll = debounce((selected: boolean) => {
   if (path == '/result') {
     router.push({ query: filterObjectWithTruthyValues(search.params.value) });
   }
-});
+};
 
-const onChange = debounce((event: Event) => {
+const onChange = (event: Event) => {
   const { checked, value } = event.target as HTMLInputElement;
 
   const selectedCategories = items.value
@@ -53,16 +53,16 @@ const onChange = debounce((event: Event) => {
   if (path == '/result') {
     router.push({ query: filterObjectWithTruthyValues(search.params.value) });
   }
-});
+};
 
-useLazyAsyncData('categories', () => store.getMany());
-
-onMounted(() => {
+onBeforeMount(() => {
   const selectedCategories = search.params.value.categories?.split(',') || [];
   items.value.forEach((item) => {
     item.checked = selectedCategories.includes(String(item.id));
   });
 });
+
+onMounted(() => store.getMany());
 </script>
 
 <template>

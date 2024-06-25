@@ -1,14 +1,9 @@
 <script setup lang="ts">
-const route = useRoute();
-watch(
-  () => route.fullPath,
-  () => {
-    useSeoMeta({
-      title:
-        'តារាងបញ្ជីលិខិតបទដ្ឋានគតិយុត្ត | ក្រសូងរៀបចំដែនដី នគរូបនីយកម្ម និងសំណង់',
-    });
-  },
-  { immediate: true }
+onMounted(() =>
+  useSeoMeta({
+    title:
+      'តារាងបញ្ជីលិខិតបទដ្ឋានគតិយុត្ត | ក្រសូងរៀបចំដែនដី នគរូបនីយកម្ម និងសំណង់',
+  })
 );
 </script>
 

@@ -1,14 +1,11 @@
 <script setup lang="ts">
-const route = useRoute();
-watch(
-  () => route.fullPath,
-  () => {
-    useServerSeoMeta({
-      title: 'រុករកឯកសារ | ក្រសូងរៀបចំដែនដី នគរូបនីយកម្ម និងសំណង់',
-    });
-  },
-  { immediate: true }
-);
+const { fullPath } = useRoute();
+
+onMounted(() => {
+  useSeoMeta({
+    title: 'រុករកឯកសារ | ក្រសូងរៀបចំដែនដី នគរូបនីយកម្ម និងសំណង់',
+  });
+});
 </script>
 
 <template>

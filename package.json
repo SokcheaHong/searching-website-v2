@@ -8,8 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "prettier": "prettier --write \"**/*.{js,vue,html,css,scss,json,md}\"",
-    "lint": "eslint --ext .js,.vue ."
+    "prettier": "prettier --write \"**/*.{js,vue,html,css,scss,json,md}\""
   },
   "dependencies": {
     "@nuxt/image": "^1.7.0",
@@ -28,8 +27,6 @@
     "@pinia/nuxt": "^0.5.1",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.38",
-    "prettier": "^3.3.2",
-    "eslint": "^8.40.0",
-    "eslint-plugin-vue": "^9.14.0"
+    "prettier": "^3.3.2"
   }
 }

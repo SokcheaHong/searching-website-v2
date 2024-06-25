@@ -22,7 +22,6 @@ export default defineStore('document', {
         const { data, status, error } = await useAPI(
           `/api/documents?${queryString}`
         );
-        await delay();
         if (status.value === 'error') {
           throw error.value;
         }
@@ -39,7 +38,6 @@ export default defineStore('document', {
       this.loading = true;
       try {
         const { data, status, error } = await useAPI(`/api/document/${id}`);
-        await delay();
         this.item = documents.find((doc) => doc.id == id); // will put below 'if error'
         if (status.value === 'error') {
           throw error.value;

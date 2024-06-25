@@ -12,10 +12,6 @@ const onChange = (event: Event) => {
     router.push({ query: filterObjectWithTruthyValues(params.value) });
   }
 };
-
-onPrehydrate(() => {
-  type.value = params.value.type || 'all';
-});
 </script>
 
 <template>
@@ -25,7 +21,6 @@ onPrehydrate(() => {
     <label class="inline-flex items-center cursor-pointer">
       <input
         type="radio"
-        name="type"
         class="radio radio-info"
         value="all"
         v-model="type"
@@ -36,7 +31,6 @@ onPrehydrate(() => {
     <label class="inline-flex items-center cursor-pointer">
       <input
         type="radio"
-        name="type"
         class="radio radio-info"
         value="name"
         v-model="type"
