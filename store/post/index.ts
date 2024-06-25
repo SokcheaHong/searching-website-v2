@@ -22,7 +22,6 @@ export default defineStore('post', {
         const { data, status, error } = await useAPI(
           `/api/post?${queryString}`
         );
-        await delay();
         if (status.value === 'error') {
           throw error.value;
         }

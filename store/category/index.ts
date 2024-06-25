@@ -20,7 +20,6 @@ export default defineStore('category', {
         const { data, status, error } = await useAPI(
           `/api/categories?${queryString}`
         );
-        await delay();
         if (status.value === 'error') {
           throw error.value;
         }
