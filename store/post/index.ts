@@ -11,16 +11,17 @@ export default defineStore('post', {
     error: false,
     message: '',
   }),
-  getters: {
-    axios: () => useAxios(),
-  },
+
   actions: {
     async getMany(query?: GetListPost) {
       this.loading = true;
       try {
         const queryString = buildQuery(query || {});
         const { data, status, error } = await useAPI(
-          `/api/post?${queryString}`
+          `/api/post?${queryString}`,
+          {
+            lazy: true,
+          }
         );
         if (status.value === 'error') {
           throw error.value;

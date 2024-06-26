@@ -9,16 +9,17 @@ export default defineStore('category', {
     error: false,
     message: '',
   }),
-  getters: {
-    axios: () => useAxios(),
-  },
+
   actions: {
     async getMany(query?: Pagination) {
       this.loading = true;
       try {
         const queryString = buildQuery(query || {});
         const { data, status, error } = await useAPI(
-          `/api/categories?${queryString}`
+          `/api/categories?${queryString}`,
+          {
+            lazy: true,
+          }
         );
         if (status.value === 'error') {
           throw error.value;

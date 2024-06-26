@@ -1,66 +1,58 @@
 <script setup lang="ts">
 import { useCategoryStore } from '~/store';
 
+const store = useCategoryStore();
 const router = useRouter();
 const { path } = useRoute();
 const search = useSearch();
 
-const store = useCategoryStore();
-const items = ref(
-  store?.items?.map((item) => ({ ...item, checked: false })) || []
+const selectedItems = computed(
+  () => search.params.value.categories?.split(',') || []
 );
-const selectedItems = ref<any[]>([]);
+const items = ref(
+  store?.items?.map((item) => ({
+    ...item,
+    checked: selectedItems.value.includes(String(item.id)),
+  })) || []
+);
 
 const isSelectAll = computed(() => items.value.every((item) => item.checked));
 const isDeselectAll = computed(() => !items.value.some((item) => item.checked));
 
-const handleSelectAll = (selected: boolean) => {
-  items.value.forEach((item) => {
-    item.checked = selected;
-  });
-
-  let selectedCategories = '';
-  if (selected) {
-    selectedItems.value = items.value?.map((item) => item.id) || [];
-    selectedCategories = items.value.map((item) => item.id).join(',') || '';
-  } else {
-    selectedCategories = '';
-    selectedItems.value = [];
-  }
-
-  search.append('categories', selectedCategories);
+const appendSearchParams = (selected: any[]) => {
+  search.append('categories', selected.join(','));
   if (path == '/result') {
     router.push({ query: filterObjectWithTruthyValues(search.params.value) });
   }
+};
+
+const handleSelectAll = (selected: boolean) => {
+  const selectedCategories: any[] = [];
+  items.value.forEach((item) => {
+    item.checked = selected;
+    if (selected) {
+      selectedCategories.push(item.id);
+    }
+  });
+
+  appendSearchParams(selectedCategories);
 };
 
 const onChange = (event: Event) => {
   const { checked, value } = event.target as HTMLInputElement;
+  const selectedCategories: any[] = [];
 
-  const selectedCategories = items.value
-    .reduce((acc, item) => {
-      if (item.id === value) {
-        item.checked = checked;
-      }
-      if (item.checked) {
-        acc.push(item.id);
-      }
-      return acc;
-    }, [] as string[])
-    .join(',');
-
-  search.append('categories', selectedCategories);
-  if (path == '/result') {
-    router.push({ query: filterObjectWithTruthyValues(search.params.value) });
-  }
-};
-
-onBeforeMount(() => {
-  const selectedCategories = search.params.value.categories?.split(',') || [];
   items.value.forEach((item) => {
-    item.checked = selectedCategories.includes(String(item.id));
+    if (item.id === value) {
+      item.checked = checked;
+    }
+    if (item.checked) {
+      selectedCategories.push(item.id);
+    }
   });
-});
+
+  appendSearchParams(selectedCategories);
+};
 
 onMounted(() => store.getMany());
 </script>

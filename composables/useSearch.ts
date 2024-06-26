@@ -1,32 +1,25 @@
-// import { reactive, computed } from '@nuxtjs/composition-api';
-
-import { computed, reactive } from 'vue';
-
-interface Params {
+interface state {
   type?: 'all' | 'name';
   categories?: string;
   search?: string;
   date?: string;
 }
-
-const state = reactive({
-  params: {
-    type: 'all',
-    categories: '',
-    search: '',
-    date: '',
-  } as Params,
+const state = ref<state>({
+  type: 'all',
+  categories: '',
+  search: '',
+  date: '',
 });
 
 export default function useSearch() {
-  const append = (key: keyof Params, value: any) => {
-    if (key in state.params) {
-      state.params[key] = value;
+  const append = (key: keyof state, value: any) => {
+    if (key in state.value) {
+      state.value[key] = value;
     }
   };
 
   const reset = () => {
-    state.params = {
+    state.value = {
       type: 'all',
       categories: '',
       search: '',
@@ -34,8 +27,10 @@ export default function useSearch() {
     };
   };
 
+  const reactiveState = computed(() => state.value);
+
   return {
-    params: computed(() => state.params),
+    params: reactiveState,
     append,
     reset,
   };
