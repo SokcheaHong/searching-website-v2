@@ -11,16 +11,17 @@ export default defineStore('document', {
     error: false,
     message: '',
   }),
-  getters: {
-    axios: () => useAxios(),
-  },
+
   actions: {
     async getMany(query?: GetListDocument) {
       this.loading = true;
       try {
         const queryString = buildQuery(query || {});
         const { data, status, error } = await useAPI(
-          `/api/documents?${queryString}`
+          `/api/documents?${queryString}`,
+          {
+            lazy: true,
+          }
         );
         if (status.value === 'error') {
           throw error.value;
