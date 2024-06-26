@@ -4,13 +4,13 @@ import { useDocumentStore } from '~/store';
 const { params } = useRoute();
 const store = useDocumentStore();
 
-const { status } = useLazyAsyncData('document-detail', () =>
-  store.get(params.id as any)
-);
+onMounted(() => {
+  store.get(params.id as any);
+});
 </script>
 
 <template>
-  <template v-if="store.loading || status == 'pending'">
+  <template v-if="store.loading">
     <Spinner />
   </template>
   <template v-else-if="store.item">

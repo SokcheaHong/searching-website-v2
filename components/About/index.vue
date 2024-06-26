@@ -6,8 +6,13 @@ const about = ref(
 </script>
 
 <template>
-  <template v-if="status != 'success'">
+  <template v-if="status === 'pending'">
     <div class="block h-60 w-full skeleton" />
+  </template>
+  <template v-else-if="status === 'error'">
+    <p class="text-gray-600">
+      មាន​អ្វីមួយ​មិន​ប្រក្រតី! មិនអាចទាញយកទិន្នន័យបានទេ។ :(
+    </p>
   </template>
   <template v-else>
     <div class="text-gray-900" v-html="(data as any)?.data?.content || about" />

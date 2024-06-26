@@ -4,15 +4,18 @@ type PropsType = {
   text?: string;
 };
 
-const props = defineProps<PropsType>();
+const props = withDefaults(defineProps<PropsType>(), {
+  color: '#86c6e0',
+  text: 'កំពុងទាញយកទិន្ន័យ',
+});
 </script>
 
 <template>
   <div role="status" class="flex items-center gap-2">
     <svg
       aria-hidden="true"
-      class="w-8 h-8 text-zinc-300 animate-spin"
-      :style="{ fill: props.color || '#86c6e0' }"
+      class="w-10 h-10 text-zinc-300 animate-spin"
+      :style="{ fill: props.color }"
       viewBox="0 0 100 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -26,6 +29,6 @@ const props = defineProps<PropsType>();
         fill="currentFill"
       />
     </svg>
-    <span class="text-gray-900">{{ props.text || 'កំពុងទាញយកទិន្ន័យ' }}</span>
+    <span class="text-gray-900">{{ props.text }}</span>
   </div>
 </template>

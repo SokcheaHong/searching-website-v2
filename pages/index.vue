@@ -1,14 +1,8 @@
 <script setup lang="ts">
-const route = useRoute();
-
-watch(
-  () => route.fullPath,
-  () => {
-    useSeoMeta({
-      title: 'ទំព័រដើម | ក្រសូងរៀបចំដែនដី នគរូបនីយកម្ម និងសំណង់​ | MLMUPC',
-    });
-  },
-  { immediate: true }
+onMounted(() =>
+  useSeoMeta({
+    title: 'ទំព័រដើម | ក្រសូងរៀបចំដែនដី នគរូបនីយកម្ម និងសំណង់​ | MLMUPC',
+  })
 );
 </script>
 

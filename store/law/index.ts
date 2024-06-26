@@ -21,7 +21,6 @@ export default defineStore('law', {
         const { data, status, error } = await useAPI(
           `/api/api/legal-letter?${queryString}`
         );
-        await delay();
         if (status.value === 'error') {
           throw error.value;
         }

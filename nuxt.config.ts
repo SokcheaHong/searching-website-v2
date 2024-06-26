@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: false },
+  devtools: { enabled: true },
   app: {
     head: {
       charset: 'utf-8',
@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       apiBaseUrl: process.env.API_URL,
-      webBaseUrl: process.env.WEB_URL,
+      webBaseUrl: process.env.NUXT_PUBLIC_SITE_URL || import.meta.url,
     },
   },
   plugins: ['~/plugins/api.ts'],

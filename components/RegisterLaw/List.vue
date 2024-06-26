@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { useLawStore } from '~/store';
 const store = useLawStore();
-const { status } = useLazyAsyncData('aws-register', () => store.getMany());
+onMounted(() => {
+  store.getMany();
+});
 </script>
 
 <template>
@@ -21,7 +23,7 @@ const { status } = useLazyAsyncData('aws-register', () => store.getMany());
         </tr>
       </thead>
       <tbody>
-        <template v-if="store.loading || status != 'success'">
+        <template v-if="store.loading">
           <RegisterLawSkeleton v-for="item in store.items" :key="item?.id" />
         </template>
         <template v-else-if="store.items?.length">
