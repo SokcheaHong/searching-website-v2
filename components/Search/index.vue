@@ -14,7 +14,7 @@ const toggleSidebar = () => {
       class="w-max bg-blue-900 h-full grid place-content-center px-4 py-2 rounded-sm"
     >
       <p
-        class="text-sm md:text-lg lg:text-xl font-semibold text-white tracking-normal text-nowrap"
+        class="text-base md:text-lg lg:text-xl text-white tracking-normal text-nowrap"
       >
         បណ្ណាល័យច្បាប់ឌីជីថល
       </p>
@@ -29,8 +29,4 @@ const toggleSidebar = () => {
 
   <SearchTopFilter class="hidden sm:flex" />
   <SearchCategoryFilter class="hidden sm:grid" />
-
-  <!-- <ClientOnly>
-    <Sidebar />
-  </ClientOnly> -->
 </template>

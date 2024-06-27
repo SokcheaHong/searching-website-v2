@@ -7,18 +7,17 @@
         aria-label="close sidebar"
         className="drawer-overlay"
       ></label>
-      <div class="min-h-full bg-zinc-50">
+      <div class="min-h-full w-full bg-zinc-50">
         <div class="grid gap-2 p-2">
           <label
-            role="button"
             aria-label="close sidebar"
-            class="drawer-button btn btn-sm btn-circle btn-ghost absolute right-4 top-2"
+            class="drawer-button btn btn-sm btn-circle btn-ghost text-lg absolute right-4 top-4"
             htmlFor="sidebar_drawer"
           >
           ✕</label
           >
-          <NuxtLink :to="{ path: '/', force: true }" class="w-full"
-            ><div class="flex flex-col items-center gap-3 p-2">
+          <NuxtLink :to="{ path: '/', force: true }" class="w-full my-2"
+            ><div class="flex flex-col items-center gap-3">
               <NuxtImg
                 alt="MLMUPC"
                 src="/mlmupc-512.png"
@@ -30,7 +29,7 @@
                 <p class="header_site_title text-sm font-semibold">
                   ក្រសួងរៀបចំដែនដី នគរូបនីយកម្ម និងសំណង់
                 </p>
-                <p class="text-xs">
+                <p class="text-[10px] font-semibold">
                   Ministry of Land Management, Urban Planning and Construction
                 </p>
               </div>

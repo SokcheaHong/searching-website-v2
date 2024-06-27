@@ -7,16 +7,12 @@ const type = ref<'all' | 'name'>(params.value.type || 'all');
 const onChange = (event: Event) => {
   const { value } = event.target as HTMLInputElement;
   append('type', value);
-
-  if (path == '/result') {
-    router.push({ query: filterObjectWithTruthyValues(params.value) });
-  }
 };
 </script>
 
 <template>
   <div
-    class="bg-[#E5EBF5] flex flex-wrap items-center gap-x-10 gap-y-5 p-4 rounded-sm"
+    class="bg-[#E5EBF5] flex flex-wrap items-center gap-x-10 gap-y-5 p-3 rounded-sm"
   >
     <label class="inline-flex items-center cursor-pointer">
       <input
