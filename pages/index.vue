@@ -1,9 +1,7 @@
 <script setup lang="ts">
-onMounted(() =>
-  useSeoMeta({
-    title: 'ទំព័រដើម | ក្រសូងរៀបចំដែនដី នគរូបនីយកម្ម និងសំណង់​ | MLMUPC',
-  })
-);
+useServerSeoMeta({
+  title: 'ទំព័រដើម | ក្រសូងរៀបចំដែនដី នគរូបនីយកម្ម និងសំណង់​ | MLMUPC',
+});
 </script>
 
 <template>

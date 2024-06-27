@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  devtools: { enabled: process.env.NODE_ENV === 'development' },
   app: {
     head: {
       charset: 'utf-8',
@@ -10,6 +10,9 @@ export default defineNuxtConfig({
         lang: 'en',
       },
     },
+  },
+  nitro: {
+    preset: 'static',
   },
   css: ['~/assets/css/main.css'],
   postcss: {
