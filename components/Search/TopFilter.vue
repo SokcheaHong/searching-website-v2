@@ -7,10 +7,6 @@ const type = ref<'all' | 'name'>(params.value.type || 'all');
 const onChange = (event: Event) => {
   const { value } = event.target as HTMLInputElement;
   append('type', value);
-
-  if (path == '/result') {
-    router.push({ query: filterObjectWithTruthyValues(params.value) });
-  }
 };
 </script>
 

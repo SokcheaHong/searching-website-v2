@@ -21,9 +21,6 @@ const isDeselectAll = computed(() => !items.value.some((item) => item.checked));
 
 const appendSearchParams = (selected: any[]) => {
   search.append('categories', selected.join(','));
-  if (path == '/result') {
-    router.push({ query: filterObjectWithTruthyValues(search.params.value) });
-  }
 };
 
 const handleSelectAll = (selected: boolean) => {
