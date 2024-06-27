@@ -38,7 +38,9 @@ export default defineStore('document', {
     async get(id: number | string) {
       this.loading = true;
       try {
-        const { data, status, error } = await useAPI(`/api/document/${id}`);
+        const { data, status, error } = await useAPI(`/api/document/${id}`, {
+          lazy: true,
+        });
         this.item = documents.find((doc) => doc.id == id); // will put below 'if error'
         if (status.value === 'error') {
           throw error.value;

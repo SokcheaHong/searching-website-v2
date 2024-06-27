@@ -1,5 +1,5 @@
 <script setup lang="ts">
-useServerSeoMeta({
+useSeoMeta({
   title: 'រុករកឯកសារ | ក្រសូងរៀបចំដែនដី នគរូបនីយកម្ម និងសំណង់',
 });
 </script>
