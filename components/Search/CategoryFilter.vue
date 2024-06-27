@@ -82,8 +82,8 @@ onMounted(() => store.getMany());
     </div>
     <div class="flex mt-4 ml-2 justify-start gap-5">
       <template v-if="store.loading">
-        <div class="h-[26px] w-[115px] skeleton" />
-        <div class="h-[26px] w-[115px] skeleton" />
+        <div class="h-[26px] w-[115px] custom_skeleton" />
+        <div class="h-[26px] w-[115px] custom_skeleton" />
       </template>
       <template v-else-if="store.items?.length">
         <button

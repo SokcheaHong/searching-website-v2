@@ -62,5 +62,4 @@ useServerSeoMeta({
       </div>
     </div>
   </section>
-  <ScrollToTop />
 </template>

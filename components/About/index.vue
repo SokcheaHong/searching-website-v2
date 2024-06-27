@@ -7,7 +7,7 @@ const about = ref(
 
 <template>
   <template v-if="status === 'pending'">
-    <div class="block h-60 w-full skeleton" />
+    <div class="block h-60 w-full custom_skeleton" />
   </template>
   <template v-else-if="status === 'error'">
     <p class="text-gray-600">
