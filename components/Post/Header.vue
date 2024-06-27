@@ -10,16 +10,16 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="flex justify-between items-center py-3">
+  <div class="flex justify-between items-center gap-1 py-3​​">
     <div
-      class="text-slate-800 font-bold text-2xl border-l-4 border-blue-500 px-2"
+      class="text-slate-800 font-bold text-xl md:text-2xl border-l-4 border-blue-500 px-2 md:ms-1"
     >
       សេចក្តីជូនដំណឹង
     </div>
     <NuxtLink
       v-if="props.type === 'featured'"
       :to="{ path: '/news', state: { isFeature: 1 } }"
-      class="text-blue-600 font-bold text-lg link hover:text-blue-800 link_transition px-2 flex items-center gap-1"
+      class="text-blue-600 font-semibold md:text-lg link hover:text-blue-800 link_transition px-2 flex items-center gap-1"
       ><svg
         class="inline-block text-inherit h-[1em] w-[1em]"
         aria-hidden="true"

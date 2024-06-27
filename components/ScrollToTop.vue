@@ -26,7 +26,7 @@ onBeforeUnmount(() => {
   <transition name="fade">
     <button
       id="pagetop"
-      class="btn btn-info fixed right-5 bottom-5 rounded-full p-2 animate-pulse duration-100 z-50"
+      class="btn btn-info fixed right-5 bottom-5 rounded-full p-2 animate-pulse z-50"
       v-show="show"
       @click="scrollToTop"
     >

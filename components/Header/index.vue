@@ -1,7 +1,7 @@
 <template>
   <header>
     <div
-      class="justify-between md:flex-col lg:flex-row items-center shadow-lg sticky top-0 z-50 md:flex bg-[#86c6e0] px-1 py-2 md:px-10 md:py-1"
+      class="justify-between md:flex-col lg:flex-row items-center shadow-lg sticky top-0 z-50 md:flex bg-[#86c6e0] p-2 md:px-10 md:py-1"
     >
       <NuxtLink :to="{ path: '/', force: true }" class="w-full"
         ><div class="flex items-center gap-1 md:gap-2">
@@ -12,7 +12,7 @@
             loading="lazy"
             class="block object-contain w-[60px] h-[60px] sm:w-[90px] sm:h-[90px]"
           />
-          <div class="grid gap-2">
+          <div class="grid gap-1">
             <p
               class="header_site_title text-[11.5px] sm:text-[18.5px] md:text-xl text-slate-900 font-semibold"
             >

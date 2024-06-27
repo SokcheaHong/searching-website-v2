@@ -58,8 +58,8 @@ onMounted(() => store.getMany());
 </script>
 
 <template>
-  <div class="bg-[#E5EBF5] px-2 py-4 rounded-sm">
-    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2 px-2">
+  <div class="bg-[#E5EBF5] rounded-sm">
+    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2 p-3">
       <template v-if="store.loading">
         <SearchCategorySkeleton v-for="item in items" :key="item.id" />
       </template>
@@ -80,7 +80,7 @@ onMounted(() => store.getMany());
         </label>
       </template>
     </div>
-    <div class="flex mt-4 ml-2 justify-start gap-5">
+    <div class="flex justify-start gap-5 px-3 py-2">
       <template v-if="store.loading">
         <div class="h-[26px] w-[115px] custom_skeleton" />
         <div class="h-[26px] w-[115px] custom_skeleton" />

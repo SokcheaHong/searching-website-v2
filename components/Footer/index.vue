@@ -1,3 +1,12 @@
+<script setup lang="ts">
+const toggleContactModal = () => {
+  const downloadModal = document.getElementById(
+    'contact_modal'
+  ) as HTMLDialogElement | null;
+  downloadModal && downloadModal.showModal();
+};
+</script>
+
 <template>
   <footer
     class="flex flex-col bg-[#86c6e0] z-[99999] overflow-hidden mt-9 text-white"
@@ -27,11 +36,14 @@
       <div class="lg:w-2/5 w-[100%] grid grid-cols-2 gap-4 items-center">
         <NuxtLink
           to="https://maps.app.goo.gl/ep8cPkufQYYvhsvZ6"
+          target="_blank"
           class="footer_place_and_phone_box"
         >
           ទីតាំង</NuxtLink
         >
-        <div class="footer_place_and_phone_box">លេខទំនាក់ទំនង</div>
+        <div class="footer_place_and_phone_box" @click="toggleContactModal">
+          លេខទំនាក់ទំនង
+        </div>
       </div>
     </div>
     <div
@@ -39,5 +51,6 @@
     >
       <p>© រក្សាសិទ្ធិគ្រប់យ៉ាងដោយ ក្រសួងរៀបចំដែនដី នគរូបនីយកម្ម និងសំណង់</p>
     </div>
+    <ContactDialog />
   </footer>
 </template>
