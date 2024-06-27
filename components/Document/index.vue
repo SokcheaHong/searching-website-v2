@@ -4,6 +4,12 @@ import { useDocumentStore } from '~/store';
 const { params } = useRoute();
 const store = useDocumentStore();
 
+useServerSeoMeta({
+  title:
+    store.item?.name ||
+    'ព័ត៌មានលម្អិតអំពីឯកសារ | ក្រសូងរៀបចំដែនដី នគរូបនីយកម្ម និងសំណង់',
+});
+
 onMounted(() => {
   store.get(params.id as any);
 });

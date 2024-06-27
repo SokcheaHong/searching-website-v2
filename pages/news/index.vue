@@ -1,9 +1,9 @@
 <script setup lang="ts">
-const { fullPath } = useRoute();
-onMounted(() => {
-  useSeoMeta({
-    title: 'សេចក្តីជូនដំណឹង | ក្រសូងរៀបចំដែនដី នគរូបនីយកម្ម និងសំណង់',
-  });
+useSeoMeta({
+  title: 'សេចក្តីជូនដំណឹង | ក្រសូងរៀបចំដែនដី នគរូបនីយកម្ម និងសំណង់',
+});
+useServerSeoMeta({
+  title: 'សេចក្តីជូនដំណឹង | ក្រសូងរៀបចំដែនដី នគរូបនីយកម្ម និងសំណង់',
 });
 </script>
 
