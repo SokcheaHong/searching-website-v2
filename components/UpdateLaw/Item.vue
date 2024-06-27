@@ -13,10 +13,11 @@ const props = defineProps<{
   item: ItemType;
 }>();
 
-const show = ref(false);
-
 const toggleDownload = () => {
-  show.value = !show.value;
+  const downloadModal = document.getElementById(
+    'download_modal'
+  ) as HTMLDialogElement | null;
+  downloadModal && downloadModal.showModal();
 };
 </script>
 
@@ -83,5 +84,5 @@ const toggleDownload = () => {
     </div>
   </div>
 
-  <DocumentDownload :show="show" :on-hide="() => (show = false)" />
+  <DocumentDownload />
 </template>

@@ -30,9 +30,7 @@ const toggleSidebar = () => {
   <SearchTopFilter class="hidden sm:flex" />
   <SearchCategoryFilter class="hidden sm:grid" />
 
-  <ClientOnly>
-    <Teleport to="body">
-      <Sidebar :open="open" :toggle="toggleSidebar" />
-    </Teleport>
-  </ClientOnly>
+  <!-- <ClientOnly>
+    <Sidebar />
+  </ClientOnly> -->
 </template>
