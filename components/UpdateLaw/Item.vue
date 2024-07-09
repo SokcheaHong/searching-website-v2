@@ -1,13 +1,7 @@
 <script setup lang="ts">
 import moment from 'moment';
 
-type ItemType = {
-  id: any;
-  name: string;
-  date: any;
-  categories: any[];
-  attributes: any[];
-};
+type ItemType = any;
 
 const props = defineProps<{
   item: ItemType;
@@ -23,6 +17,7 @@ const toggleDownload = () => {
 
 <template>
   <div
+    data-aos="fade-up"
     class="grid lg:grid-cols-3 lg:divide-x-2 gap-3 bg-zinc-100 p-5 rounded-sm"
   >
     <div class="w-full lg:col-span-2">
@@ -39,7 +34,7 @@ const toggleDownload = () => {
         </template>
       </div>
       <NuxtLink
-        :to="'/document/' + props.item?.id"
+        :to="'/document/' + props.item.id"
         class="font-black text-xl link-hover text-blue-800 lg:basis-3/5 link_transition"
       >
         {{ props.item?.name }}

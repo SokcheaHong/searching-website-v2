@@ -13,7 +13,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <tr>
+  <tr data-aos="fade-in">
     <td class="border border-slate-500 text-center">
       {{ arabicToKhmer(props.index) }}
     </td>

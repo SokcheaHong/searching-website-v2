@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import "./assets/css/main.css"
 useSeoMeta({
   description:
     'គេហទំព័រនេះ ត្រូវបានបង្កើតឡើងដើម្បីចងក្រងទិន្នន័យលិខិតបទដ្ឋានគតិយុត្តក្នុងក្របខណ្ឌវិស័យរៀបចំដែនដី នគរូបនីយកម្ម និងសំណង់ (MLMUPC)។',
