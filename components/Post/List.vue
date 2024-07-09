@@ -1,19 +1,20 @@
 <script setup lang="ts">
-import { usePostStore } from '~/store';
-const store = usePostStore();
-
-onMounted(() => {
-  store.getMany({ isFeatured: Number(!history?.state?.isFeature || 1) });
-});
+import type { MetaData, Post } from '~/base/interfaces/ApiData';
+const message = ref<string | any>("");
+const { data, status, error, pending } = await useFetch<any>('/api/post');
+if (error.value) {
+  throw message.value = error.value
+}
+const items = computed<Post[]>(() => data.value.data.posts)
 </script>
 
 <template>
   <div class="grid gap-3">
-    <template v-if="store.loading">
-      <PostSkeleton v-for="item of store.items" :key="item.id" />
+    <template v-if="pending">
+      <PostSkeleton v-for="item of items" :key="item.id" />
     </template>
-    <template v-else-if="store.items?.length">
-      <PostItem v-for="item of store.items" :key="item.id" :item="item" />
+    <template v-else-if="items?.length">
+      <PostItem v-for="(item) of items" :key="item.id" :item="item" />
     </template>
   </div>
 </template>
